@@ -1,0 +1,31 @@
+{{template "base.html" .}}
+
+{{define "title"}}홈{{end}}
+
+{{define "styles"}}{{template "index_styles" .}}{{end}}
+
+{{define "content"}}
+<section class="hero">
+    <h2>수강신청 시스템에 오신 것을 환영합니다</h2>
+</section>
+
+<div class="portal-grid">
+    <article class="portal-card portal-card--admin">
+        <h3>관리자 포털</h3>
+        <p>대시보드에서 강좌 등록하세요.</p>
+        <a href="/admin/dashboard" class="btn" style="width:100%;">관리자 대시보드로 이동</a>
+    </article>
+
+    <article class="portal-card portal-card--student">
+        <h3>수강생 포털</h3>
+        <p>학번을 입력하세요.</p>
+        <form id="clientPortalForm" class="portal-form">
+            <label for="portalStudentId"></label><input type="number" id="portalStudentId" min="1" required placeholder="학번 입력">
+            <button type="submit" class="btn btn-success">이동</button>
+        </form>
+    </article>
+</div>
+{{end}}
+
+{{define "scripts"}}{{template "index_scripts" .}}{{end}}
+
