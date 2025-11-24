@@ -1,6 +1,7 @@
 package model
 
 import (
+	"golang-course-registration/common/constants"
 	"golang-course-registration/common/exception"
 	"testing"
 )
@@ -25,8 +26,8 @@ func TestNewStudent(t *testing.T) {
 			name string
 			id   int
 		}{
-			{"학번이 1000보다 작을 경우 예외 발생", StudentIDMinLength - 1},
-			{"학번이 9999보다 클 경우 예외 발생", StudentIDMaxLength + 1},
+			{"학번이 1000보다 작을 경우 예외 발생", constants.StudentIdMin - 1},
+			{"학번이 9999보다 클 경우 예외 발생", constants.StudentIdMax + 1},
 		}
 
 		for _, tt := range tests {
